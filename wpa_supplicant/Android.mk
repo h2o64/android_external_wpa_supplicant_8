@@ -1560,9 +1560,6 @@ LOCAL_SRC_FILES := $(OBJS_c)
 LOCAL_C_INCLUDES := $(INCLUDES)
 include $(BUILD_EXECUTABLE)
 
-# This needs QMI artifacts to be built
-ifneq ($(QCPATH),)
-
 ifeq ($(CONFIG_EAP_PROXY),qmi)
 include $(CLEAR_VARS)
 
@@ -1583,7 +1580,6 @@ LOCAL_SHARED_LIBRARIES += $(LIB_SHARED_EAP_PROXY)
 include $(BUILD_SHARED_LIBRARY)
 
 endif # qmi EAP_PROXY
-endif # QCPATH
 
 
 ########################
